@@ -21,4 +21,11 @@ program
     core.serveComponent();
   });
 
+program
+  .command('component:test')
+  .action((tag, cmd) => {
+    // Options or flags exist in cmd
+    core.test();
+  });
+
 program.parse(process.argv);

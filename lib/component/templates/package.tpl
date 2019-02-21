@@ -6,8 +6,16 @@
   "keywords": ["lit-element", "component"],
   "author": "autogenered <hello@catsys.com>",
   "license": "MIT",
-  "dependencies": {
-    "lit-html": "^1.0.0",
-    "lit-css": "^0.1.3"
-  }
+  "scripts": {
+      "karma": "karma",
+      "test": "karma start"
+    },
+    "dependencies": {
+      "lit-html": "^1.0.0",
+      "lit-css": "^0.1.3"
+    },
+    "devDependencies": {
+      "@open-wc/testing": "^0.9.11",
+      "@open-wc/testing-karma": "^0.4.7"
+    }
 }
