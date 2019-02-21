@@ -12,7 +12,11 @@ A CLI useful for Lit Elements
 - `catsys component:create <component-tag>`: Create a WebComponent based in lit-element
 - `catsys component:serve`: Deploy in developing mode your component.
 - `catsys component:test`: Run the unit tests in the component
+- `catsys app:create <name>`: Create a PWA boilerplate (it is not necessary -app)
+- `catsys app:serve [--static, -s]`: Deploy static files ES5 compatibility high
+- `catsys app:serve [--develop, -d]`: Deploy the current code in src
 
+**`app:serve` is develop mode [dafault]**
 ### Prerequisites
 
 You need to have installed > NodeJS 8.x and NPM, Yarn is optional.
