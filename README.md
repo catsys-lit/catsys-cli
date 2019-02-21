@@ -9,7 +9,7 @@ A CLI useful for Lit Elements
 
 ## Getting Started
 
-- `catsys component:create <component-tag>`: Create a WebComponent based in lit-html
+- `catsys component:create <component-tag>`: Create a WebComponent based in lit-element
 - `catsys component:serve`: Deploy in developing mode your component.
 - `catsys component:test`: Run the unit tests in the component
 

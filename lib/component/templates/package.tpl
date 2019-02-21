@@ -11,8 +11,7 @@
       "test": "karma start"
     },
     "dependencies": {
-      "lit-html": "^1.0.0",
-      "lit-css": "^0.1.3"
+      "lit-element": "^2.0.0"
     },
     "devDependencies": {
       "@open-wc/testing": "^0.9.11",

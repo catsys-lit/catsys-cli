@@ -2,6 +2,7 @@
 # <{{TAG_NAME}}>
 
 ![LitElement component](https://img.shields.io/badge/litElement-component-blue.svg)
+![Travis CI](https://travis-ci.org/github_username/{{TAG_NAME}}.svg?branch=master)
 
 > This is an example file with default selections.
 

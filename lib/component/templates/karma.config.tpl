@@ -61,7 +61,7 @@ module.exports = config => {
         }
       },
 
-      verbose: true // output config used by istanbul for debugging
+      verbose: false // output config used by istanbul for debugging
     }
 
       // your custom config

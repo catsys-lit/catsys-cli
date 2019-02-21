@@ -3,6 +3,7 @@ node_modules/
 *lock.json
 *-log.json
 *-error.json
+yarn.lock
 
 *.d.ts
 *.tgz
