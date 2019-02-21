@@ -9,23 +9,43 @@ program.version('1.0.0', '-v, --version');
 
 program
   .command('component:create <tag>')
-  .action((tag, cmd) => {
-    // Options or flags exist in cmd
+  .action(tag => {
     core.createComponent(tag);
   });
 
 program
   .command('component:serve')
-  .action((tag, cmd) => {
-    // Options or flags exist in cmd
+  .action(() => {
     core.serveComponent();
   });
 
 program
   .command('component:test')
-  .action((tag, cmd) => {
-    // Options or flags exist in cmd
+  .action(() => {
     core.test();
+  });
+
+// PWA commands
+
+program
+  .command('app:serve')
+  .option('-d, --develop', 'Develop mode')
+  .option('-s, --static', 'ES5 compiled mode')
+  .action(cmd => {
+    let mode = 'develop';
+    if(cmd.develop) {
+      mode = 'develop';
+    }
+    if(cmd.static) {
+      mode = 'static';
+    }
+    core.serveApp(mode);
+  });
+
+program
+  .command('app:create <tag>')
+  .action(tag => {
+    core.createApp(tag);
   });
 
 program.parse(process.argv);
