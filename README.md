@@ -9,12 +9,14 @@ A CLI useful for Lit Elements
 
 ## Getting Started
 
-- `catsys component:create <component-tag>`: Create a WebComponent based in lit-element
-- `catsys component:serve`: Deploy in developing mode your component.
-- `catsys component:test`: Run the unit tests in the component
-- `catsys app:create <name>`: Create a PWA boilerplate (it is not necessary -app)
-- `catsys app:serve [--static, -s]`: Deploy static files ES5 compatibility high
-- `catsys app:serve [--develop, -d]`: Deploy the current code in src
+- `catsys component:create <component-tag>`: Creates a WebComponent based in lit-element
+- `catsys component:serve`: Deploys in developing mode your component.
+- `catsys component:test`: Runs the unit tests in the component
+- `catsys app:create <name>`: Creates a PWA boilerplate (it is not necessary -app)
+- `catsys app:serve [--static, -s]`: Deploys static files ES5 compatibility high
+- `catsys app:serve [--develop, -d]`: Deploys the current code in src
+- `catsys app:component <component-name>`: Creates a WebComponent based in lit-element light for app
+- `catsys app:page <page-name>`: Creates a page with redux connection. Also, provides a new property `_[page_name]State` in your app shell ready to use.
 
 **`app:serve` is develop mode [dafault]**
 ### Prerequisites

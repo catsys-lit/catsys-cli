@@ -7,6 +7,8 @@ const program = require('commander');
 
 program.version('1.0.0', '-v, --version');
 
+// Component commands
+
 program
   .command('component:create <tag>')
   .action(tag => {
@@ -58,6 +60,12 @@ program
       tag = `${tag}-component`;
     }
     core.createComponentInApp(tag);
+  });
+
+program
+  .command('app:page <tag>')
+  .action(name => {
+    core.createPage(name);
   });
 
 program.parse(process.argv);
