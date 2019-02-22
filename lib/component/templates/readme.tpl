@@ -17,7 +17,7 @@
 ## Usage
 
 - You can use `yarn` or `npm install` for install the dependencies and devDependencies
-- `catsys component:serve` - Developing server (Refresh the browser, because the first time is not serving). We're on it.
+- `catsys component:serve` - Developing server
 - `catsys component:test` - Run unit testing
 
 ## Contributing

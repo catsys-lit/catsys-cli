@@ -1,5 +1,4 @@
-import { html, LitElement } from 'lit-element';
-import style from './{{TAG_NAME}}-styles.js';
+import { html, LitElement, css } from 'lit-element';
 
 class {{CLASS_NAME}} extends LitElement {
   static get properties() {
@@ -9,7 +8,7 @@ class {{CLASS_NAME}} extends LitElement {
   }
 
   static get styles() {
-    return style;
+    return css``;
   }
 
   constructor() {

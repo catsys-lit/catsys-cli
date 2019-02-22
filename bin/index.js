@@ -10,6 +10,9 @@ program.version('1.0.0', '-v, --version');
 program
   .command('component:create <tag>')
   .action(tag => {
+    if (!tag.includes('-')) {
+      tag = `${tag}-component`;
+    }
     core.createComponent(tag);
   });
 
@@ -33,10 +36,10 @@ program
   .option('-s, --static', 'ES5 compiled mode')
   .action(cmd => {
     let mode = 'develop';
-    if(cmd.develop) {
+    if (cmd.develop) {
       mode = 'develop';
     }
-    if(cmd.static) {
+    if (cmd.static) {
       mode = 'static';
     }
     core.serveApp(mode);
@@ -46,6 +49,15 @@ program
   .command('app:create <tag>')
   .action(tag => {
     core.createApp(tag);
+  });
+
+program
+  .command('app:component <tag>')
+  .action(tag => {
+    if (!tag.includes('-')) {
+      tag = `${tag}-component`;
+    }
+    core.createComponentInApp(tag);
   });
 
 program.parse(process.argv);
