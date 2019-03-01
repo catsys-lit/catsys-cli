@@ -2,7 +2,6 @@
 # Catsys CLI
 
 ![Node](https://img.shields.io/badge/node-%3E%3D%208.x-brightgreen.svg)
-![Gulp](https://img.shields.io/badge/task%20manager-gulp-orange.svg)
 ![BrowserSync](https://img.shields.io/badge/DevelopMode-BrowserSync-blue.svg)
 
 A CLI useful for Lit Elements
@@ -30,13 +29,18 @@ npm install --global polymer-cli
 
 ### Installing
 
-Only clone the repository and install the dependencies.
+```
+npm install --global catsys-cli
+npm i -g catsys-cli
+```
+
+For local developing: Only clone the repository and install the dependencies.
 
 ```
 npm i
 ```
 
-And that's all, you can use the repository in yout local environment
+And that's all, you can use the repository in your local environment
 
 ```
 npm link
