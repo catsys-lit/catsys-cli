@@ -4,8 +4,9 @@
 
 const core = require('../lib');
 const program = require('commander');
+const pkg = require('../package.json');
 
-program.version('1.0.0', '-v, --version');
+program.version(pkg.version, '-v, --version');
 
 // Component commands
 
