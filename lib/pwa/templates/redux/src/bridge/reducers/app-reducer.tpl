@@ -5,7 +5,14 @@ import {
 } from '../actions/app.js';
 
 const INITIAL_STATE = {
-  page: 'home'
+    page: 'home',
+    config: {
+      type: 'app',
+      transition: {
+        type: 'fadeIn',
+        delay: 300
+      }
+    }
 };
 
 const app = (state = INITIAL_STATE, action) => {
