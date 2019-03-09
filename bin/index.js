@@ -12,11 +12,12 @@ program.version(pkg.version, '-v, --version');
 
 program
   .command('component:create <tag>')
-  .action(tag => {
+  .option('-s, --styles [style]', 'Select styles pre-processor for developing')
+  .action((tag, cmd) => {
     if (!tag.includes('-')) {
       tag = `${tag}-component`;
     }
-    core.createComponent(tag);
+    core.createComponent(tag, cmd.styles);
   });
 
 program
@@ -50,8 +51,17 @@ program
 
 program
   .command('app:create <tag>')
-  .action(tag => {
-    core.createApp(tag);
+  .option('-b, --basic', 'Simple PWA')
+  .option('-r, --redux', 'Redux PWA integration')
+  .action((tag, cmd) => {
+    let type = 'basic';
+    if(cmd.basic) {
+      type = 'basic';
+    }
+    if(cmd.redux) {
+      type = 'redux';
+    }
+    core.createApp(tag, type);
   });
 
 program

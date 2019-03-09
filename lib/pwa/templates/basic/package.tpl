@@ -6,13 +6,10 @@
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.4",
     "lit-element": "^2.0.0",
-    "pwa-helpers": "^0.9.0",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "@polymer/paper-button": "^3.0.1"
   },
   "keywords": [
     "lit-element",
-    "redux",
     "catsys"
   ],
   "author": "Together we're more",

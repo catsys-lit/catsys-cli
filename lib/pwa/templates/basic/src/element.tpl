@@ -1,26 +1,18 @@
 import {LitElement, html} from 'lit-element';
-import {connect} from 'pwa-helpers/connect-mixin.js';
-import {installRouter} from 'pwa-helpers/router.js';
-import {updateMetadata} from 'pwa-helpers/metadata.js';
-
-// This element is connected to the Redux store.
-import {store} from './bridge/store.js';
-
-// These are the actions needed by this element.
-import {
-  navigate
-} from './bridge/actions/app.js';
 
 // These are the elements needed by this element.
 import {styles} from './{{APP_TAG}}-styles.js';
 import { fadeInTransitionPage } from './utils/{{APP_TAG}}-transitions.js';
+
+import './pages/default-page.js';
+import './pages/home-page.js';
+import '@polymer/paper-button/paper-button.js';
 // import {menuIcon} from './utils/{{APP_TAG}}-icons.js';
 
-class {{APP_CLASS}} extends connect(store)(LitElement) {
+class {{APP_CLASS}} extends LitElement {
   static get properties() {
     return {
       appTitle: {type: String},
-      _config: {type: Object},
       _page: {type: String}
     };
   }
@@ -45,8 +37,8 @@ class {{APP_CLASS}} extends connect(store)(LitElement) {
           Catsys (beta)
         </div>
         <nav class="navbar-principal">
-          <a class="home" ?selected="${this._page === 'home'}" href="/home">Home</a>
-          <a class="default" ?selected="${this._page === 'default'}" href="/default">More</a>
+          <paper-button @click="${this.changePage}" page="home">Home</paper-button>
+          <paper-button @click="${this.changePage}" page="default">More</paper-button>
         </nav>
       </header>
       <!-- Main content -->
@@ -76,12 +68,20 @@ class {{APP_CLASS}} extends connect(store)(LitElement) {
 
   constructor() {
     super();
-    // TODO Initialize properties
+    this._page = 'home';
+    this._config = {
+      type: 'app',
+      transition: {
+        type: 'fadeIn',
+        delay: 300
+      }
+    }
   }
 
-  firstUpdated() {
-    installRouter((location) => store.dispatch(navigate(decodeURIComponent(location.pathname))));
-  }
+  changePage(event) {
+      const page = event.currentTarget.getAttribute('page');
+      this._page = page;
+    }
 
   updated(changedProps) {
     if (changedProps.has('_page')) {
@@ -90,17 +90,7 @@ class {{APP_CLASS}} extends connect(store)(LitElement) {
       setTimeout(() => {
         pageOut.classList.remove('out');
       }, this._config.transition.delay);
-      const pageTitle = this.appTitle + ' - ' + this._page;
-      updateMetadata({
-        title: pageTitle,
-        description: pageTitle
-      });
     }
-  }
-
-  stateChanged(state) {
-    this._page = state.app.page;
-    this._config = state.app.config;
   }
 }
 
