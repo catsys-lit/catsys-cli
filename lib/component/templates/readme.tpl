@@ -1,4 +1,4 @@
-![{{TAG_NAME}} screenshot]({{TAG_NAME}}.png)
+![{{TAG_NAME}} screenshot]({{TAG_NAME}}.svg)
 # <{{TAG_NAME}}>
 
 ![LitElement component](https://img.shields.io/badge/litElement-component-blue.svg)

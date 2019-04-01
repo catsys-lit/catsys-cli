@@ -1,4 +1,4 @@
-![Catsys CLI](catsys.png)
+![Catsys CLI](catsys.svg)
 # Catsys CLI
 
 ![Node](https://img.shields.io/badge/node-%3E%3D%208.x-brightgreen.svg)
